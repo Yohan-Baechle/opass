@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Password Generator</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/daisyui@3.9.4/dist/full.css"
+            rel="stylesheet"
+            type="text/css"
+        />
+    </head>
+    <body class="bg-gray-100">
+        <div class="h-screen flex flex-col justify-center items-center">
+            <h1 class="text-4xl mb-4">O'Pass</h1>
+            <div
+                class="flex flex-col justify-around items-center w-4/5 h-3/5 p-4 bg-white shadow-md rounded-lg"
+            >
+                <input
+                    type="text"
+                    class="input input-bordered input-secondary w-4/5 text-center truncate"
+                    readonly
+                />
+                <div class="flex flex-wrap">
+                    <div class="form-control flex flex-col">
+                        <label class="cursor-pointer label flex items-">
+                            <input
+                                type="checkbox"
+                                checked="checked"
+                                class="checkbox checkbox-secondary"
+                            />
+                            <span class="ml-2">Chiffres</span>
+                        </label>
+                    </div>
+                    <div class="form-control flex flex-col">
+                        <label class="cursor-pointer label flex items-center">
+                            <input
+                                type="checkbox"
+                                checked="checked"
+                                class="checkbox checkbox-secondary"
+                            />
+                            <span class="ml-2">minuscules</span>
+                        </label>
+                    </div>
+                    <div class="form-control flex flex-col">
+                        <label class="cursor-pointer label flex items-center">
+                            <input
+                                type="checkbox"
+                                checked="checked"
+                                class="checkbox checkbox-secondary"
+                            />
+                            <span class="ml-2">majuscules</span>
+                        </label>
+                    </div>
+                    <div class="form-control flex flex-col">
+                        <label class="cursor-pointer label flex items-center">
+                            <input
+                                type="checkbox"
+                                checked="checked"
+                                class="checkbox checkbox-secondary"
+                            />
+                            <span class="ml-2">Caractères spéciaux</span>
+                        </label>
+                    </div>
+                </div>
+                <div
+                    class="range w-3/5 mt-4 flex justify-center items-center cursor-pointer"
+                >
+                    <input
+                        type="range"
+                        min="4"
+                        max="100"
+                        value="10"
+                        class="range range-secondary"
+                        step="1"
+                    />
+                    <input
+                        type="text"
+                        class="display-length input input-bordered w-20 text-center ml-6 truncate"
+                        value="10"
+                        readonly
+                    />
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="assets/js/app.js"></script>
+    </body>
+</html>
