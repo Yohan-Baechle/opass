@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>O'Password</title>
+        <link href="/dist/output.css" rel="stylesheet" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+        />
+    </head>
+    <body
+        class="bg-slate-100 dark:bg-slate-800 h-screen flex flex-col justify-center items-center"
+    >
+        <label class="swap swap-rotate absolute right-0 top-0 m-6">
+            <!-- this hidden checkbox controls the state -->
+            <input type="checkbox" />
+
+            <!-- sun icon -->
+            <svg
+                id="sun-icon"
+                class="swap-on w-10 h-10 fill-yellow-500"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+            >
+                <path
+                    d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z"
+                />
+            </svg>
+
+            <!-- moon icon -->
+            <svg
+                id="moon-icon"
+                class="swap-off w-10 h-10 fill-sky-200"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+            >
+                <path
+                    d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"
+                />
+            </svg>
+        </label>
+        <h1 class="text-4xl mb-4 text-slate-800 dark:text-slate-200 font-bold">
+            O'Pass
+        </h1>
+        <div
+            class="flex flex-col justify-around items-center w-4/5 h-3/5 p-4 bg-white dark:bg-slate-600 shadow-md rounded-lg"
+        >
+            <div class="w-full flex justify-center items-center">
+                <input
+                    type="text"
+                    class="w-4/5 password-input input input-bordered input-secondary text-center truncate pr-10 bg-slate-200 dark:bg-slate-900 text-slate-900 dark:text-slate-400"
+                    readonly
+                    id="passwordInput"
+                />
+                <i class="fas fa-copy cursor-pointer -ml-8" id="copy-icon"></i>
+            </div>
+            <div class="m-0 h-2 success"></div>
+            <div class="flex flex-wrap justify-start md:justify-center w-full">
+                <div class="form-control flex flex-col">
+                    <label class="cursor-pointer label flex items-">
+                        <input
+                            type="checkbox"
+                            checked="checked"
+                            class="numbers-btn checkbox checkbox-secondary dark:text-slate-900"
+                        />
+                        <span class="ml-2 text-slate-900 dark:text-white"
+                            >Chiffres</span
+                        >
+                    </label>
+                </div>
+                <div class="form-control flex flex-col">
+                    <label class="cursor-pointer label flex items-center">
+                        <input
+                            type="checkbox"
+                            class="lowercase-btn checkbox checkbox-secondary"
+                        />
+                        <span class="ml-2 text-slate-900 dark:text-white"
+                            >minuscules</span
+                        >
+                    </label>
+                </div>
+                <div class="form-control flex flex-col">
+                    <label class="cursor-pointer label flex items-center">
+                        <input
+                            type="checkbox"
+                            class="uppercase-btn checkbox checkbox-secondary"
+                        />
+                        <span class="ml-2 text-slate-900 dark:text-white"
+                            >majuscules</span
+                        >
+                    </label>
+                </div>
+                <div class="form-control flex flex-col">
+                    <label class="cursor-pointer label flex items-center">
+                        <input
+                            type="checkbox"
+                            class="special-chars-btn checkbox checkbox-secondary"
+                        />
+                        <span class="ml-2 text-slate-900 dark:text-white"
+                            >Caractères spéciaux</span
+                        >
+                    </label>
+                </div>
+            </div>
+            <div class="w-10/12 text-center">
+                <p class="text-slate-900 dark:text-white">
+                    Longueur du mot de passe :
+                </p>
+                <div
+                    class="range mt-4 flex justify-center items-center cursor-pointer"
+                >
+                    <input
+                        type="range"
+                        min="4"
+                        max="100"
+                        value="10"
+                        class="range range-secondary dark:bg-gray-300"
+                        step="1"
+                    />
+                    <input
+                        type="text"
+                        class="display-length input input-bordered w-20 text-center ml-6 truncate bg-slate-200 dark:bg-slate-900 text-slate-900 dark:text-slate-400"
+                        value="15"
+                        readonly
+                    />
+                </div>
+            </div>
+            <button class="generate-btn btn btn-secondary">Générer</button>
+        </div>
+        <script src="assets/js/script.js"></script>
+    </body>
+</html>
