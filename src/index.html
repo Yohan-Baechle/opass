@@ -1,20 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" class="dark">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>O'Password</title>
-        <link
-            href="https://cdn.jsdelivr.net/npm/daisyui@3.9.4/dist/full.css"
-            rel="stylesheet"
-            type="text/css"
-        />
+        <link href="/dist/output.css" rel="stylesheet" />
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
         />
     </head>
-    <body class="bg-white h-screen flex flex-col justify-center items-center">
+    <body
+        class="bg-slate-100 dark:bg-slate-800 h-screen flex flex-col justify-center items-center"
+    >
         <label class="swap swap-rotate absolute right-0 top-0 m-6">
             <!-- this hidden checkbox controls the state -->
             <input type="checkbox" />
@@ -22,7 +20,7 @@
             <!-- sun icon -->
             <svg
                 id="sun-icon"
-                class="swap-on fill-current w-10 h-10"
+                class="swap-on w-10 h-10 fill-yellow-500"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
             >
@@ -34,7 +32,7 @@
             <!-- moon icon -->
             <svg
                 id="moon-icon"
-                class="swap-off fill-current w-10 h-10"
+                class="swap-off w-10 h-10 fill-sky-200"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
             >
@@ -43,32 +41,33 @@
                 />
             </svg>
         </label>
-        <h1 class="text-4xl mb-4">O'Pass</h1>
+        <h1 class="text-4xl mb-4 text-slate-800 dark:text-slate-200 font-bold">
+            O'Pass
+        </h1>
         <div
-            class="flex flex-col justify-around items-center w-4/5 h-3/5 p-4 bg-white shadow-md rounded-lg"
+            class="flex flex-col justify-around items-center w-4/5 h-3/5 p-4 bg-white dark:bg-slate-600 shadow-md rounded-lg"
         >
             <div class="w-full flex justify-center items-center">
                 <input
                     type="text"
-                    class="w-4/5 password-input input input-bordered input-secondary text-center truncate pr-10"
+                    class="w-4/5 password-input input input-bordered input-secondary text-center truncate pr-10 bg-slate-200 dark:bg-slate-900 text-slate-900 dark:text-slate-400"
                     readonly
                     id="passwordInput"
                 />
                 <i class="fas fa-copy cursor-pointer -ml-8" id="copy-icon"></i>
             </div>
-
             <div class="m-0 h-2 success"></div>
-            <div
-                class="flex flex-wrap xs:justify-start md:justify-center w-full"
-            >
+            <div class="flex flex-wrap justify-start md:justify-center w-full">
                 <div class="form-control flex flex-col">
                     <label class="cursor-pointer label flex items-">
                         <input
                             type="checkbox"
                             checked="checked"
-                            class="numbers-btn checkbox checkbox-secondary"
+                            class="numbers-btn checkbox checkbox-secondary dark:text-slate-900"
                         />
-                        <span class="ml-2">Chiffres</span>
+                        <span class="ml-2 text-slate-900 dark:text-white"
+                            >Chiffres</span
+                        >
                     </label>
                 </div>
                 <div class="form-control flex flex-col">
@@ -77,7 +76,9 @@
                             type="checkbox"
                             class="lowercase-btn checkbox checkbox-secondary"
                         />
-                        <span class="ml-2">minuscules</span>
+                        <span class="ml-2 text-slate-900 dark:text-white"
+                            >minuscules</span
+                        >
                     </label>
                 </div>
                 <div class="form-control flex flex-col">
@@ -86,7 +87,9 @@
                             type="checkbox"
                             class="uppercase-btn checkbox checkbox-secondary"
                         />
-                        <span class="ml-2">majuscules</span>
+                        <span class="ml-2 text-slate-900 dark:text-white"
+                            >majuscules</span
+                        >
                     </label>
                 </div>
                 <div class="form-control flex flex-col">
@@ -95,12 +98,16 @@
                             type="checkbox"
                             class="special-chars-btn checkbox checkbox-secondary"
                         />
-                        <span class="ml-2">Caractères spéciaux</span>
+                        <span class="ml-2 text-slate-900 dark:text-white"
+                            >Caractères spéciaux</span
+                        >
                     </label>
                 </div>
             </div>
             <div class="w-10/12 text-center">
-                <p>Longueur du mot de passe :</p>
+                <p class="text-slate-900 dark:text-white">
+                    Longueur du mot de passe :
+                </p>
                 <div
                     class="range mt-4 flex justify-center items-center cursor-pointer"
                 >
@@ -109,12 +116,12 @@
                         min="4"
                         max="100"
                         value="10"
-                        class="range range-secondary"
+                        class="range range-secondary dark:bg-gray-300"
                         step="1"
                     />
                     <input
                         type="text"
-                        class="display-length input input-bordered w-20 text-center ml-6 truncate"
+                        class="display-length input input-bordered w-20 text-center ml-6 truncate bg-slate-200 dark:bg-slate-900 text-slate-900 dark:text-slate-400"
                         value="15"
                         readonly
                     />
@@ -122,15 +129,6 @@
             </div>
             <button class="generate-btn btn btn-secondary">Générer</button>
         </div>
-        <script src="https://cdn.tailwindcss.com"></script>
-        <script>
-            tailwind.config = {
-                darkmode: "class",
-                daisyui: {
-                    themes: ["light", "dark"],
-                },
-            };
-        </script>
-        <script src="assets/js/app.js"></script>
+        <script src="assets/js/script.js"></script>
     </body>
 </html>
