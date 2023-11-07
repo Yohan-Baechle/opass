@@ -1,6 +1,6 @@
 # O'Pass - Générateur de Mot de Passe
 
-![Image](https://github.com/Yohan-Baechle/opass/src/assets/img/capture.jpg)
+![Image](https://github.com/Yohan-Baechle/opass/blob/main/src/assets/img/capture.jpg)
 
 ## Présentation
 
